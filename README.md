@@ -1,2 +1,2 @@
-# HankyPanty.github.io
+# https://HankyPanty.github.io
 using github pages
