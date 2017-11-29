@@ -124,7 +124,21 @@ Gender-based differences in human speech are partly due to physiological differe
 				<div class="text">
 
 					<!-- Start edit here  -->
-					Write something here.
+					 
+1. Framing: The recorded discrete signal s(n) has always a finite length NTOTAL, but is usually not processed whole due to its quasi-stationary nature. The signal is framed into pieces of length N<<NTOTAL samples. The vocal tract is not able to change its shape faster than fifty times per second, which gives us a period of 20 milliseconds during which the signal can be assumed to be stationary. The length N of the frames is based on a compromise between time and frequency resolution. An overlapping of the individual frames is used to increase precision of the recognition process.
+2. Windowing: Before further processing, the individual frames are windowed. We have used a standard hamming window.
+where sw(n) is the windowed signal, s(n) is the original signal N samples long, and w(n) is the window itself.
+3. Pre-Emphasis: Pre-emphasis is processing of the input signal by a low order digital FIR filter so as to flatten spectrally the input signal in favor of vocal tract parameters. It makes the signal less susceptible to later finite precision effects. This filter is usually the first order FIR filter defined as
+sp(n)=s(n)-a.s(n-1)
+Where a is a pre-emphasis coefficient lying usually in an interval of (0.9 to1), s(n) is the original signal, and sp(n) is a pre-emphasized signal.
+ 
+Speech signal can be classified into voiced, unvoiced and silence regions. The near periodic vibration of vocal folds is excitation for the production of voiced speech. The random like excitation is present for unvoiced speech. There is no excitation during silence region. Majority of speech regions are voiced in nature that include vowels, semivowels and other voiced components. The voiced regions looks like a near periodic signal in the time domain representation. In a short term, we may treat the voiced speech segments to be periodic for all practical analysis and processing.
+We have used Zero Crossing Rate, Pitch and a Magnitude Sum Function to classify the frames as voiced using simple thresholds, which were functions of these features themselves.
+Zero Crossing Rate is the rate of sign-changes along a signal, i.e., the rate at which the signal changes from positive to negative or back.
+Pitch is the fundamental frequency of the input excitation to our vocal tract.
+Magnitude Sum Function sums the modulus of all the samples in our frame.
+After identifying the voiced frames, we have primarily worked on these frames to calculate the pitch of the human voice.
+
 					<!-- Stop edit here -->
 
 				</div>
