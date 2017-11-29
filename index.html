@@ -1,9 +1,11 @@
 <html>
 	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<style type="text/css">
+			
 			body{font-family: sans-serif;}
 			p{display: inline-block;}
-			img{display: block;}
+			img{height:300px;width:550px;}
 			.container{width: 90%;position absolute;margin: auto;}
 			.title{position: relative;width: 90%;margin: auto;text-align: center;font-weight: bold;font-size: 32px;padding-top: 0.7cm;}
 			.section{position: relative;width: 90%;margin: auto;padding-top: 3cm;}
@@ -12,7 +14,9 @@
 			.heading2{position: relative; width: 98%;text-align: left;font-size: 18px;font-weight: bold;color: DimGrey;}
 			.text{width: 95%;font-size: 16px;text-align: justify;padding: 10px 0px 10px 0px;}
 			.authors{position: relative;width: 80%;margin: auto;padding: 2%;font-style: italic;text-align: center;font-size: 14px;font-weight: bold;}
-			.image{width: 95%;font-size: 12px;text-align: left;}
+			.col-md-5{
+				padding: 0px;
+			}
 		</style>
 	</head>
 	<body>
@@ -224,24 +228,50 @@ If the speech frame is decided to be voiced, an impulse train is employed to rep
 							
 							While formants should help us better classify, we got a better accuracy(92%) using only the pitch.</p>	
 							</div>
-					<div class="image">			
-							<img src="Screenshot (620).png" alt="1st screenshot" width="500px" height=""/ align="left">	
-							<img src="Screenshot (624).png" alt="1st screenshot" width="500px" height=""/ align="right">
-							</div><div class="image"><p>line one<br><br></p>	
-							<img src="Screenshot (625).png" alt="1st screenshot" width="500px" height=""/ align="left">	
-							<img src="Screenshot (626).png" alt="1st screenshot" width="500px" height=""/ align="right">
-							</div><div class="image"><p>line one<br><br></p>	
-							<img src="Screenshot (627).png" alt="1st screenshot" width="500px" height=""/ align="left">	
-							<img src="Screenshot (629).png" alt="1st screenshot" width="500px" height=""/ align="right">
-							</div><div class="image"><p>line one<br><br></p>	
-							<img src="Screenshot (627).png" alt="1st screenshot" width="500px" height=""/ align="left">	
-							<img src="Screenshot (629).png" alt="1st screenshot" width="500px" height=""/ align="right">	
-							<!-- Stop edit here -->
+							`	
 
-					</div>
 				</div>
 			</div>
-
+			<div class="row">
+								<div class="col-md-5">
+									<img src="Screenshot (627).png">
+							</div>
+								<div class="col-md-2"></div>
+								<div class="col-md-5">
+									<img src="Screenshot (629).png">
+								</div>
+				</div>
+				<p><br>Fig 1,2: Identifing of voiced frames<br></p> 
+			<div class="row">
+								<div class="col-md-5">
+									<img src="Screenshot (630).png">
+							</div>
+								<div class="col-md-2"></div>
+								<div class="col-md-5">
+									<img src="Screenshot (631).png">
+								</div>
+				</div>
+				<p><br>Fig 1,2: Identifing of voiced frames<br></p> 
+			<div class="row">
+								<div class="col-md-5">
+									<img src="Screenshot (625).png">
+							</div>
+								<div class="col-md-2"></div>
+								<div class="col-md-5">
+									<img src="Screenshot (625).png">
+								</div>
+				</div>
+				<p><br>Fig 1,2: Identifing of voiced frames<br></p> 
+				<div class="row">
+								<div class="col-md-5">
+									<img src="Screenshot (620).png">
+							</div>
+								<div class="col-md-2"></div>
+								<div class="col-md-5">
+									<img src="Screenshot (634).png">
+								</div>
+				</div>
+				<p><br>Fig 1,2: Identifing of voiced frames<br></p> 
 			<div class="section">
 				<div class="heading">4. Conclusions</div>
 				<div class="subsection">
@@ -307,5 +337,10 @@ We are considering an indoor environment(less noise).We want to see that the cla
 			</div>
 
 		</div>
+		<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</body>
 </html>
