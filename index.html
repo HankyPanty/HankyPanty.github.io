@@ -133,12 +133,67 @@ Conclusions and future precedences of the work are discussed in section 4.
 where sw(n) is the windowed signal, s(n) is the original signal N samples long, and w(n) is the window itself.</p>
 <br><p>3. Pre-Emphasis: Pre-emphasis is processing of the input signal by a low order digital FIR filter so as to flatten spectrally the input signal in favor of vocal tract parameters. It makes the signal less susceptible to later finite precision effects. This filter is usually the first order FIR filter defined as sp(n)=s(n)-a.s(n-1) Where a is a pre-emphasis coefficient lying usually in an interval of (0.9 to1), s(n) is the original signal, and sp(n) is a pre-emphasized signal.</p>
  
-<br>Speech signal can be classified into voiced, unvoiced and silence regions. The near periodic vibration of vocal folds is excitation for the production of voiced speech. The random like excitation is present for unvoiced speech. There is no excitation during silence region. Majority of speech regions are voiced in nature that include vowels, semivowels and other voiced components. The voiced regions looks like a near periodic signal in the time domain representation. In a short term, we may treat the voiced speech segments to be periodic for all practical analysis and processing.
-We have used Zero Crossing Rate, Pitch and a Magnitude Sum Function to classify the frames as voiced using simple thresholds, which were functions of these features themselves.
+<br>Identifying voiced/unvoiced/silence parts of speech: Speech signal can be classified into voiced, unvoiced and silence regions. The near periodic vibration of vocal folds is excitation for the production of voiced speech. The random like excitation is present for unvoiced speech. There is no excitation during silence region. Majority of speech regions are voiced in nature that include vowels, semivowels and other voiced components. The voiced regions looks like a near periodic signal in the time domain representation. In a short term, we may treat the voiced speech segments to be periodic for all practical analysis and processing.
+We have used Zero Crossing Rate, Pitch and a Magnitude Sum Function to classify the frames as voiced using simple thresholds, which were functions of these features themselves.<br>
 Zero Crossing Rate is the rate of sign-changes along a signal, i.e., the rate at which the signal changes from positive to negative or back.
 Pitch is the fundamental frequency of the input excitation to our vocal tract.
-<br>Magnitude Sum Function sums the modulus of all the samples in our frame.
-After identifying the voiced frames, we have primarily worked on these frames to calculate the pitch of the human voice.
+Magnitude Sum Function sums the modulus of all the samples in our frame.<br>
+After identifying the voiced frames, we have primarily worked on these frames to calculate the pitch of the human voice.<br>
+
+Features Extraction Using Linear Predictive Analysis (LPC)<br>
+
+
+Speech signal is produced by the convolution of excitation source and time varying vocal tract system components. These excitation and vocal tract components are to be separated from the available speech signal to study these components independently.<br><br> 
+
+The linear predictive coding (LPC) method for speech analysis and synthesis is based on modeling the Vocal tract as a linear All-Pole (IIR) filter having the system transfer function:<br>
+         Where p is the number of poles, G is the filter Gain, and a[k] are the parameters that determine the poles. <br><br>
+
+Compuatation of LP Coefficients<br>
+The vocal tract system can be modeled as a time-varying all-pole filter using segmental analysis. The segmental analysis corresponds to the processing of speech as short 30ms windows. The vocal tract system is assumed to be stationary within the window and is modeled as an all-pole filter of order p using linear prediction (LP) analysis. The LP analysis works on the principle that a sample value in a correlated, stationary sequence can be predicted as a linear weighted sum of the past few (p) samples. If s(n) denotes a sequence of speech samples, then the predicted value at the time instant n is given by,<br><br>
+
+ 
+
+ 
+ 
+By Autocorrelation Method<br>
+At first the speech signal s(n) is multiplied by a window w(n) to get a windowed speech segment sw(n), where,<br>
+ 
+ 
+The values of {ak} that minimize E are found by assigning the partial derivatives of E with respect to {ak} to zeros. If we set ∂E/∂ak = 0, for k = 1,... ,p, we get p equations with p unknown variables {ak} as shown below:<br>
+ 
+In above equation , the windowed speech signal sw(n) = 0 outside the window w(n). The linear equations can be expressed in terms of the autocorrelation function. This is because the autocorrelation function of the windowed segment sw(n) is defined as<br>
+ 
+The set of linear equations can be represented in the following matrix form: <br>
+ 
+Above equation can be expressed as<br>
+                   Ra=r<br>
+The resulting matrix is a Toeplitz matrix where all elements along a given diagonal are equal. At the synthesis filter H(z)=1/A(z), the zeros of A(z) become the poles of H(z).<br><br>
+
+Computing LP Residual<br>
+The LP residual signal used as excitation, there are large error values at regular intervals within voiced regions of speech. These are the instants of glottal closure at which the vocal tract system is excited. Hence the LP residual signal can be approximated to the excitation source signal.
+LP residual signal is obtained by passing the speech signal through inverse filter designed with LP coefficients (LPCs).The block diagram of the inverse filter is shown in Figure below:
+
+ 
+
+LPCC feature extraction<br>
+The idea behind LPCC is to  model the human vocal tract by digitalize all-pole filter.The following block diagram shows the process for analyse the LPCC feature vectors.<br>
+ 
+                                  Block Diagram :Step for LPCC
+There is a simple recursive formula for computing Linear Prediction Cepstral Coefficients directly from LPCs without doing any DFTs 
+Even though an infinite number of Linear Prediction Cepstral Coefficients can be calculated, we have calculated only the first 10(10-12 is standard).<br>
+Pitch calculation using LP residual<br><br>
+
+For voiced speech segment its LP residual is observed to be periodic. In LP residual signal, peak amplitudes refers to closure of vocal folds (glottal closure). The periodicity in LP residual indicates the pitch information.<br>
+ 
+As the LP residual is an error signal obtained by the LP analysis, it is noisy in nature. As the pitch marks are characterized by the sharp and periodic discontinuity, it cause a large error in the computed LP residual. So the periodicity of the error gives the pitch period of that segment of speech and this can be computed by the autocorrelation method. It has to be noted that for unvoiced speech signal the residual will be like random noise without any periodicity.<br><br>
+ 
+The accurate pitch extraction is not an easy task due to the non-stationarity and quasi-periodicity of speech signal, as well as the interaction between the glottal excitation and the vocal tract.
+The periodicity associated with such segments is defined is pitch period in the time domain and 'Pitch frequency or Fundamental Frequency in the frequency domain. Unless specified, the term 'pitch' refers to the fundamental frequency'. Pitch is an important attribute of voiced speech. It contains speaker-specific information. It is also needed for speech coding task.<br><br>
+
+Once the LPC coefficients are competed, we can determine whether the input speech frame is voiced, and if so, what the pitch is.
+If the speech frame is decided to be voiced, an impulse train is employed to represent it, with nonzero taps occurring every pitch period. A pitch-detecting algorithm is used in order to determine to correct pitch period / frequency.  The autocorrelation function is used to estimate the pitch period as . However, if the frame is unvoiced, then white noise is used to represent it and a pitch period of T=0 is transmitted. Therefore, either white noise or impulse train becomes the excitation of the LPC synthesis filter<br>
+
+
 
 					<!-- Stop edit here -->
 
