@@ -11,7 +11,7 @@ colour: grey;
   position: fixed;
 
   display: block;
-  background-image: url("https://raw.githubusercontent.com/HankyPanty/HankyPanty.github.io/master/pic_back.jpg");
+  background-image: url("pic_back.jpg");
   width: 1920px;
   height: 1000px;
   -webkit-filter: blur(5px);
@@ -30,14 +30,10 @@ colour: grey;
          width: 40%;
          float: left;
 }
-
 .top_head:hover, .top_head:focus {
   background-color: #3e8e41;
 }
-/*.top_head:hover a p.new-label span{
-  display: none;
-}
-*/
+
 footer{position: fixed;
                background: black;
                text-align: center;
@@ -117,8 +113,9 @@ footer{position: fixed;
 <div class="background-image"> </div>
 
 
-<div > <button onmouseover="Home()" class="top_head">Pranav Totala</button><div id="top" class="ass"> <a href="https://google.com">Go Home?</a></div></div>       
-     
+<div onmouseover="Home()" class="top_head"><a id="top" href="https://hankypanty.github.io/">Pranav Totala </a></div>       
+
+
 
 <div class="dropdown">
 <button onmouseover="myFunction()" class="dropbtn">Family</button>
@@ -146,7 +143,7 @@ footer{position: fixed;
     <a >ada</a>
     <a >afsgrgggggggggggggggggggggggggggggg</a>
   </div>
-</div>     
+</div>   
 
 
 <footer>
@@ -167,12 +164,13 @@ function myFunction3() {
     document.getElementById("myDropdown3").classList.toggle("show");
 }
 function Home() {
-    document.getElementById("top").classList.toggle("show");
+    
+    document.getElementById("top").innerHTML = "Go home?";
 }
 
 
 // Close the dropdown if the user clicks outside of it
-window.onmouseover = function(event) {
+window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
 
     var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -185,20 +183,6 @@ window.onmouseover = function(event) {
     }
   }
 }
-window.onclick = function(event) {
-  if (!event.target.matches('.top_head')) {
-
-    var dropdowns = document.getElementsByClassName("ass");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-
 
 </script>   
 
