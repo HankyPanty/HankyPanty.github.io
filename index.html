@@ -115,30 +115,30 @@
    <body>
                 <div class="background-image"> </div>
 
-                <div onmouseover="Home()" class="top_head"><a id="top" href="https://hankypanty.github.io/">Home</a></div>       
+                <div onmouseover="GoHome()" onmouseout="Home()" class="top_head"><a id="top" href="https://hankypanty.github.io/">Home</a></div>       
                 <div class="dropdown">
                 <button onmouseover="myFunction()" class="dropbtn">Contact</button>
                   <div id="myDropdown" class="dropdown-content">
                     <a href="https://www.linkedin.com/in/p-totala/" target="_blank">Linkedin</a>
                     <a href="https://twitter.com/pranav_totala" target="_blank">Twitter</a>
-                    <a href="https://hankypanty.github.io/contact">More</a>
+                    <a href="https://hankypanty.github.io/contact" target="_blank">More</a>
                   </div>
                 </div>
                 <div class="dropdown">
                 <button onmouseover="myFunction2()" class="dropbtn">Family</button>
                   <div id="myDropdown2" class="dropdown-content">
-                    <a >Totala </a>
-                    <a >Sarda</a>
+                    <a href="https://hankypanty.github.io/totala">Totala </a>
+                    <a href="https://hankypanty.github.io/sarda">Sarda</a>
                   </div>
                 </div>     
                 <div class="dropdown">
                 <button onmouseover="myFunction3()" class="dropbtn">Personal</button>
                   <div id="myDropdown3" class="dropdown-content">
-                    <a href="hankypanty.github.io/about" target="_blank">About</a>
-                    <a href="hankypanty.github.io/friends" target="_blank">Friends</a>
-                    <a href="hankypanty.github.io/goals" target="_blank">Current year Goal</a>
-                    <a href="hankypanty.github.io/projects" target="_blank">Projects</a>
-                    <a href="hankypanty.github.io/cv" target="_blank">CV</a>
+                    <a href="https://hankypanty.github.io/about">About</a>
+                    <a href="https://hankypanty.github.io/friends">Friends</a>
+                    <a href="https://hankypanty.github.io/projects">Projects</a>
+                    <a href="https://hankypanty.github.io/cv">CV</a>
+                    <a href="https://hankypanty.github.io/goals">Current year Goal</a>
                   </div>
                 </div>   
 
@@ -160,9 +160,13 @@
                 function myFunction3() {
                     document.getElementById("myDropdown3").classList.toggle("show");
                 }
-                function Home() {
+                function GoHome() {
 
                     document.getElementById("top").innerHTML = "Go home?";
+                }
+                function Home() {
+
+                    document.getElementById("top").innerHTML = "Home";
                 }
                 // Close the dropdown if the user clicks outside of it
                 window.onclick = function(event) {
