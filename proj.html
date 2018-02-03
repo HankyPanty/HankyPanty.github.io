@@ -7,7 +7,7 @@
    <body>
                 <div class="background-image"> </div>
 
-                <div onmouseover="GoHome()" onmouseout="Home()" class="top_head"><a id="top" href="https://hankypanty.github.io/">Home</a></div>       
+                <div onmouseover="GoHome()" onmouseout="Home()" class="top_head"><a id="top" href="https://hankypanty.github.io/">Projects</a></div>       
                 <div class="dropdown">
                 <button onmouseover="myFunction()" class="dropbtn">Contact</button>
                   <div id="myDropdown" class="dropdown-content">
@@ -34,6 +34,16 @@
                   </div>
                 </div>   
 
+                <div class="mid"><h3>Here are some of my projects</h3><br>
+                  <ul>
+                    <li><a href="https://hankypanty.github.io/proj/dsp"  target="_blank">Gender Classification by Speech</a></li>
+                    <li><a href="https://hankypanty.github.io/proj/capt" target="_blank">IITG Webmail Captcha Solver</a></li>
+                    <li><a href="https://www.instructables.com/id/Rubics-Cube-Solver-Bot" target="_blank">Rubiks cub solver bot</a></li>
+                    <li><a href="https://www.instructables.com/id/LED-Wicket-Sensor/" target="_blank">LED Wicket Sensors</a></li>
+                    <li><a href="mailto:pranavtotala48@gmail.com?Subject=Hello%20again" target="_top">pranavtotala48@gmail.com</a></li>
+                  </ul> 
+                </div>
+
                 <footer>
                   <p>Posted by:   who dafuq you think?</p>
                 </footer>
@@ -57,7 +67,7 @@
                 }
                 function Home() {
 
-                    document.getElementById("top").innerHTML = "Home";
+                    document.getElementById("top").innerHTML = "Projects";
                 }
                 // Close the dropdown if the user clicks outside of it
                 window.onclick = function(event) {
