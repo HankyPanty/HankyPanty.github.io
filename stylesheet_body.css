@@ -108,9 +108,9 @@
                 .mid{
                     position: fixed;
                     color: black;
- -                  padding: 30px;
- +                  padding-left: 70px;
- +                  padding-top: 130px;
+                   /* padding: 30px;*/
+                    padding-left: 70px;
+                    padding-top: 130px;
                     font-size: 30px;
- +
+ 
                   }
