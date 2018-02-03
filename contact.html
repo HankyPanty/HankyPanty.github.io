@@ -1,130 +1,14 @@
 <html>
+
    <head>
-     <title>HankyPanty</title>
-           <style>
-                *{  margin: 0;
-                padding: 0;
-                colour: grey;
-                }
-
-                .background-image{ 
-                  position: fixed;
-                  display: block;
-                  background-image: url("pic_back.jpg");
-                  width: 1920px;
-                  height: 1000px;
-                  -webkit-filter: blur(5px);
-                  -moz-filter: blur(5px);
-                  -o-filter: blur(5px);
-                  -ms-filter: blur(5px);
-                  filter: blur(15px);
-                    }
-                .top_head{
-                  position: fixed;
-                  background: black;
-                  text-align: center;
-                  color: white;
-                  padding: 20px;
-                  font-size: 30px;
-                  width: 40%;
-                  float: left;
-                }
-
-                .mid{
-                  position: fixed;
-                  color: black;
-                  padding-left: 70px;
-                  padding-top: 130px;
-                  font-size: 30px;
-
-                }
-                .top_head:hover, .top_head:focus {
-                  background-color: #3e8e41;
-                }
-
-                footer{
-                  position: fixed;
-                  background: black;
-                  text-align: center;
-                  color: white;
-                  padding: 20px;
-                  font-size: 18px;
-                  bottom: 0;
-                  width: 100%;
-                  float: bottom;
-                       }
-                #a{
-                  font-size: 100px;
-                 }
-                .dropbtn {
-                  background-color: black;
-                  text-align: center;
-                  color: white;
-                  /*width: 20%;*/
-                  padding: 25px;
-                  padding-right: 60px;
-                  padding-left: 60px;
-                  font-size: 20px;
-                  border: none;
-                  cursor: pointer;
-                }
-                .dropbtn:hover, .dropbtn:focus {
-                  background-color: #3e8e41;
-                }
-
-                .dropdown {
-                  float: right;
-                  position: relative;
-                  display: inline-block;
-                }
-                .ass{
-                  display: none;
-                  position: absolute;
-                  background-color: #f9f9f9;
-                  min-width: 160px;
-                  overflow: auto;
-                  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                  left: 0;
-                  z-index: 1;
-                  }
-                  .ass {
-                  color: black;
-                  padding: 12px 16px;
-                  text-decoration: none;
-                  display: block;
-                }
-                .dropdown-content {
-                  display: none;
-                  position: absolute;
-                  background-color: #f9f9f9;
-                  min-width: 160px;
-                  overflow: auto;
-                  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                  right: 0;
-                  z-index: 1;
-                }
-
-                .dropdown-content a {
-                  color: black;
-                  padding: 12px 16px;
-                  text-decoration: none;
-                  display: block;
-                }
-
-                .dropdown a:hover {
-                  background-color: #f1f1f1
-                }
-
-                .show {
-                  display:block;
-                }
-          </style>
-        
+     <title>Contact HankyPanty</title>
+     <link rel="stylesheet" type="text/css" href="stylesheet_body.css">   
    </head>
+
    <body>
                 <div class="background-image"> </div>
 
-                <div onmouseover="Home()" class="top_head"><a id="top" href="https://hankypanty.github.io/">Contact</a></div>       
+                <div onmouseover="GoHome()" onmouseout="Home()" class="top_head"><a id="top" href="https://hankypanty.github.io/">Contact</a></div>       
                 <div class="dropdown">
                 <button onmouseover="myFunction()" class="dropbtn">Contact</button>
                   <div id="myDropdown" class="dropdown-content">
@@ -143,10 +27,10 @@
                 <div class="dropdown">
                 <button onmouseover="myFunction3()" class="dropbtn">Personal</button>
                   <div id="myDropdown3" class="dropdown-content">
-                    <a href="hankypanty.github.io/about" target="_blank">About</a>
-                    <a href="hankypanty.github.io/friends" target="_blank">Friends</a>
+                    <a href="hankypanty.github.io/abt" target="_blank">About</a>
+                    <a href="hankypanty.github.io/frnd" target="_blank">Friends</a>
                     <a href="hankypanty.github.io/goals" target="_blank">Current year Goal</a>
-                    <a href="hankypanty.github.io/projects" target="_blank">Projects</a>
+                    <a href="hankypanty.github.io/proj" target="_blank">Projects</a>
                     <a href="hankypanty.github.io/cv" target="_blank">CV</a>
                   </div>
                 </div>   
@@ -181,9 +65,13 @@
                 function myFunction3() {
                     document.getElementById("myDropdown3").classList.toggle("show");
                 }
-                function Home() {
+                function GoHome() {
 
                     document.getElementById("top").innerHTML = "Go home?";
+                }
+                function Home() {
+
+                    document.getElementById("top").innerHTML = "Contact";
                 }
                 // Close the dropdown if the user clicks outside of it
                 window.onclick = function(event) {
