@@ -1,94 +1,32 @@
 <html>
-
-   <head>
-     <title>Contact HankyPanty</title>
-     <link rel="stylesheet" type="text/css" href="stylesheet_body.css">   
+    <head>
+        <title>HankyPanty</title>
+        <script src="commonJs.js"></script>
+       
    </head>
 
    <body>
-                <div class="background-image"> </div>
 
-                <div onmouseover="GoHome()" onmouseout="Home()" class="top_head"><a id="top" href="https://hankypanty.github.io/">Contact</a></div>       
-                <div class="dropdown">
-                <button onmouseover="myFunction()" class="dropbtn">Contact</button>
-                  <div id="myDropdown" class="dropdown-content">
-                    <a href="https://www.linkedin.com/in/p-totala/" target="_blank">Linkedin</a>
-                    <a href="https://twitter.com/pranav_totala" target="_blank">Twitter</a>
-                    <a href="hankypanty.github.io/contact" target="_blank">More</a>
-                  </div>
-                </div>
-                <div class="dropdown">
-                <button onmouseover="myFunction2()" class="dropbtn">Family</button>
-                  <div id="myDropdown2" class="dropdown-content">
-                    <a >Totala </a>
-                    <a >Sarda</a>
-                  </div>
-                </div>     
-                <div class="dropdown">
-                <button onmouseover="myFunction3()" class="dropbtn">Personal</button>
-                  <div id="myDropdown3" class="dropdown-content">
-                    <a href="hankypanty.github.io/abt" target="_blank">About</a>
-                    <a href="hankypanty.github.io/frnd" target="_blank">Friends</a>
-                    <a href="hankypanty.github.io/goals" target="_blank">Current year Goal</a>
-                    <a href="hankypanty.github.io/proj" target="_blank">Projects</a>
-                    <a href="hankypanty.github.io/cv" target="_blank">CV</a>
-                  </div>
-                </div>   
-                <br><br><br><br>
-                <div class="mid"><h3>You can contact me in the following ways:</h3><br>
-                  <ul>
-                    <li><a href="https://www.facebook.com/pranav.totala"  target="_blank">Facebook</a></li>
-                    <li><a href="https://twitter.com/pranav_totala" target="_blank">Twitter</a></li>
-                    <li><a href="https://www.linkedin.com/in/p-totala/" target="_blank">Linkedin</a></li>
-                    <li><a href="https://www.quora.com/profile/Pranav-121" target="_blank">Quora</a></li>
-                    <li><a href="mailto:pranavtotala48@gmail.com?Subject=Hello%20again" target="_top">pranavtotala48@gmail.com</a></li>
-                  </ul> 
+        <div id="common-content" style="width: 100%;">
+        </div>
 
-
-                </div>
-
-
-                <footer>
-                  <p>Posted by:   who dafuq you think?</p>
-                </footer>
-
+        <br><br><br><br>
+        <div class="mid" style="position: absolute;"><h3>You can contact me in the following ways:</h3><br>
+            <ul>
+                <li><a href="https://www.facebook.com/pranav.totala"  target="_blank">Facebook</a></li>
+                <li><a href="https://www.instagram.com/pranav.totala" target="_blank">Instagram</a></li>
+                <li><a href="https://www.x.com/pranav_totala" target="_blank">Twitter</a></li>
+                <li><a href="https://www.linkedin.com/in/pranavtotala/" target="_blank">Linkedin</a></li>
+                <li><a href="https://www.quora.com/profile/Pranav-121" target="_blank">Quora</a></li>
+                <li><a href="mailto:pranavtotala48@gmail.com?Subject=Hello%20again" target="_top">pranavtotala48@gmail.com</a></li>
+            </ul> 
+        </div>
 
         <script>
-                /* When the user clicks on the button, 
-                toggle between hiding and showing the dropdown content */
-                function myFunction() {
-                    document.getElementById("myDropdown").classList.toggle("show");
-                }
-                function myFunction2() {
-                    document.getElementById("myDropdown2").classList.toggle("show");
-                }
-                function myFunction3() {
-                    document.getElementById("myDropdown3").classList.toggle("show");
-                }
-                function GoHome() {
 
-                    document.getElementById("top").innerHTML = "Go home?";
-                }
-                function Home() {
+        loadCommonContent();
 
-                    document.getElementById("top").innerHTML = "Contact";
-                }
-                // Close the dropdown if the user clicks outside of it
-                window.onclick = function(event) {
-                  if (!event.target.matches('.dropbtn')) {
-
-                    var dropdowns = document.getElementsByClassName("dropdown-content");
-                    var i;
-                    for (i = 0; i < dropdowns.length; i++) {
-                      var openDropdown = dropdowns[i];
-                      if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                      }
-                    }
-                  }
-                }
-
-        </script>   
+        </script> 
 
     </body>
 </html>

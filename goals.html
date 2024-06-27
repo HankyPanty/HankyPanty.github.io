@@ -1,83 +1,19 @@
 <html>
-   <head>
-     <title>HankyPanty</title>
-     <link rel="stylesheet" type="text/css" href="stylesheet_body.css">
+    <head>
+        <title>HankyPanty</title>
+        <script src="commonJs.js"></script>
+       
    </head>
 
    <body>
-                <div class="background-image"> </div>
-
-                <div onmouseover="GoHome()" onmouseout="Home()" class="top_head"><a id="top" href="https://hankypanty.github.io/">Goals</a></div>       
-                <div class="dropdown">
-                <button onmouseover="myFunction()" class="dropbtn">Contact</button>
-                  <div id="myDropdown" class="dropdown-content">
-                    <a href="https://www.linkedin.com/in/p-totala/" target="_blank">Linkedin</a>
-                    <a href="https://twitter.com/pranav_totala" target="_blank">Twitter</a>
-                    <a href="https://hankypanty.github.io/contact">More</a>
-                  </div>
-                </div>
-                <div class="dropdown">
-                <button onmouseover="myFunction2()" class="dropbtn">Family</button>
-                  <div id="myDropdown2" class="dropdown-content">
-                    <a href="https://hankypanty.github.io/totala">Totala </a>
-                    <a href="https://hankypanty.github.io/sarda">Sarda</a>
-                  </div>
-                </div>     
-                <div class="dropdown">
-                <button onmouseover="myFunction3()" class="dropbtn">Personal</button>
-                  <div id="myDropdown3" class="dropdown-content">
-                    <a href="https://hankypanty.github.io/abt">About</a>
-                    <a href="https://hankypanty.github.io/frnd">Friends</a>
-                    <a href="https://hankypanty.github.io/proj">Projects</a>
-                    <a href="https://hankypanty.github.io/cv">CV</a>
-                    <a href="https://hankypanty.github.io/goals">Current year Goal</a>
-                  </div>
-                </div> 
-
-                <div class="mid"><h3>You will know soon enough... Care abt it? then contact me and remind for updating! last updated 2-2-18 </h3><br>
-                </div>  
-
-                <footer>
-                  <p>Posted by:   who dafuq you think?</p>
-                </footer>
-
+        <div id="common-content" style="width: 100%;">
+        </div>
 
         <script>
-                /* When the user clicks on the button, 
-                toggle between hiding and showing the dropdown content */
-                function myFunction() {
-                    document.getElementById("myDropdown").classList.toggle("show");
-                }
-                function myFunction2() {
-                    document.getElementById("myDropdown2").classList.toggle("show");
-                }
-                function myFunction3() {
-                    document.getElementById("myDropdown3").classList.toggle("show");
-                }
-                function GoHome() {
 
-                    document.getElementById("top").innerHTML = "Go home?";
-                }
-                function Home() {
+        loadCommonContent();
 
-                    document.getElementById("top").innerHTML = "Goals";
-                }
-                // Close the dropdown if the user clicks outside of it
-                window.onclick = function(event) {
-                  if (!event.target.matches('.dropbtn')) {
-
-                    var dropdowns = document.getElementsByClassName("dropdown-content");
-                    var i;
-                    for (i = 0; i < dropdowns.length; i++) {
-                      var openDropdown = dropdowns[i];
-                      if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                      }
-                    }
-                  }
-                }
-
-        </script>   
+        </script>
 
     </body>
 </html>
